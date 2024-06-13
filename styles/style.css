@@ -1,0 +1,186 @@
+/* General Styles */
+.rangeRequirements:has(input:checked) {
+  text-decoration: line-through blue;
+  font-style: italic ;
+}
+
+.rangeRequirements label {
+  font-size: auto;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+/* Header */
+header {
+  background-color: #000000;
+  padding: 20px;
+  text-align: center;
+  color: #FF5733; /* Burnt Orange */
+}
+
+/* Search Bar */
+.searchBarWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: #111111;
+}
+
+.searchBarWrapper input[type="search"] {
+  width: 60%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.searchBarWrapper .searchBarButton {
+  background-color: #FF5733; /* Burnt Orange */
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.searchBarWrapper .searchBarButton:hover {
+  background-color: #FF8C00; /* Neon Orange */
+}
+
+/* Main Content */
+main {
+  padding: 20px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #444;
+  background-color: #111111;
+  color: #FFFFFF;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+nav {
+  background-color: #111111;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.styledButton {
+  background-color: #FF5733; /* Burnt Orange */
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.styledButton:hover {
+  background-color: #FF8C00; /* Neon Orange */
+}
+
+/* Requirement List */
+.rangeRequirements {
+  background-color: #111111;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.rangeRequirements:hover {
+  background-color: #FF8C00; /* Neon Orange */
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-content {
+  background-color: #111111;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  border-radius: 5px;
+}
+
+.modal-content input {
+  width: calc(100% - 30%);
+  height: auto;
+}
+
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #FF8C00; /* Neon Orange */
+  cursor: pointer;
+}
+
+/* Footer */
+footer {
+  background-color: #000000;
+  color: #FF5733; /* Burnt Orange */
+  padding: 20px;
+  text-align: center;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer ul li a {
+  color: #FF5733; /* Burnt Orange */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+footer ul li a:hover {
+  color: #FF8C00; /* Neon Orange */
+}
+
+/* Specific link color */
+a {
+  color: #FF5733; /* Burnt Orange */;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #FF8C00; /* Neon Orange */;
+}
+
+.reded-out {
+  background-color: red;
+  color: white; /* Optional, to contrast better with grey background */
+}
