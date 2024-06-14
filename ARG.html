@@ -8,7 +8,7 @@
     <title>Adaptive Range Guide</title>
   </head>
   <body>
-    <header><h1>Adaptive Range Guide</h1></header>
+    <header class="titlesForPages"><h1>Adaptive Range Guide</h1></header>
     <!-- Need to make a few tab button to filter through the pages we're on like, clicking the botton is equaivalent to hitting a new tab and refreshing the page with new information to fill in      -->
 
     <div class="searchBarWrapper">
@@ -18,18 +18,21 @@
 
     <!-- everything in the main should change based on the current tab the user is on. everything above main and below /body should remain to look static -->
     <main class="initialPage">
-
-      <!-- this selector will have a pop up form that you fill out based on the option selected. It will then populate the information into the appropriate areas on certain pages -->
-      <select id="select_edit_options">
-        <option>Range Sensors</option>
-        <option>Range Crew</option>
-        <option>Range Contacts</option>
-        <option>Units</option>
-        <option>PACE</option>
-        <option>SUT</option>
-      </select>
-
-      <nav>
+      <aside class="addInfo">
+        <span class="titlesForPages"><h2>SELECT INFORMATION YOU WANT TO ADD</h2></span>
+        <!-- this selector will have a pop up form that you fill out based on the option selected. It will then populate the information into the appropriate areas on certain pages -->
+        <select id="select_edit_options">
+          <option>Range Sensors</option>
+          <option>Range Crew</option>
+          <option>Range Contacts</option>
+          <option>Units</option>
+          <option>PACE</option>
+          <option>SUT</option>
+        </select>
+        <button type="add-info-to-cards" name="add-info-to-cards">CLICK TO ADD</button>
+      </aside>
+      <nav class="listOfReqs">
+        <span class="titlesForPages"><h2>LIST OF ALL PLANNING REQUIREMENTS</h2></span>
         <!-- this button will ask you if you hit add requirements a button will pop up asking you to make a new item to be inserted into the list. Then you'll be propted to via an alert or pop up window to confirm that you want to add. -->
         <button id="add_msn_reqs" class="styledButton"><label>ADD REQUIREMENTS</label></button>
         <!-- have it pop a list up of current items in the range requirements list and then from the pop up of the current items you can select each one you wannt to remove then hit a remove button in the pop up page. from there you'll get an alert "Are you sure you want to remove the current items?" followed by a yes or no. -->

@@ -1,4 +1,7 @@
 /* General Styles */
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
 .rangeRequirements:has(input:checked) {
   text-decoration: line-through blue;
   font-style: italic ;
@@ -55,6 +58,11 @@ header {
 /* Main Content */
 main {
   padding: 20px;
+}
+
+main span {
+  text-decoration: underline;
+  text-shadow: #FF8C00 2px;
 }
 
 select {
@@ -183,4 +191,8 @@ a:hover {
 .reded-out {
   background-color: red;
   color: white; /* Optional, to contrast better with grey background */
+}
+
+.titlesForPages {
+  color: rgb(0, 89, 255);
 }
