@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=divice-width, initial-scale=1.0">
-    <script type="module" src="./scripts/main.js" defer></script>
+    <script type="module" src="./Pages/main.js" defer></script>
     <link rel="stylesheet" type="text/css" href="./styles/style.css">
     <title>Adaptive Range Guide</title>
   </head>
@@ -14,65 +14,70 @@
     <div class="searchBarWrapper">
       <input type="search" id="search_bar" placeholder="Search the document">
       <button type="search" class="searchBarButton">Search</button>
-  </div>
+    </div>
 
     <!-- everything in the main should change based on the current tab the user is on. everything above main and below /body should remain to look static -->
-    <main class="initialPage">
-      <aside class="addInfo">
-        <span class="titlesForPages"><h2>SELECT INFORMATION YOU WANT TO ADD</h2></span>
-        <!-- this selector will have a pop up form that you fill out based on the option selected. It will then populate the information into the appropriate areas on certain pages -->
-        <select id="select_edit_options">
-          <option>Range Sensors</option>
-          <option>Range Crew</option>
-          <option>Range Contacts</option>
-          <option>Units</option>
-          <option>PACE</option>
-          <option>SUT</option>
-        </select>
-        <button type="add-info-to-cards" name="add-info-to-cards">CLICK TO ADD</button>
-      </aside>
-      <nav class="listOfReqs">
-        <span class="titlesForPages"><h2>LIST OF ALL PLANNING REQUIREMENTS</h2></span>
-        <!-- this button will ask you if you hit add requirements a button will pop up asking you to make a new item to be inserted into the list. Then you'll be propted to via an alert or pop up window to confirm that you want to add. -->
-        <button id="add_msn_reqs" class="styledButton"><label>ADD REQUIREMENTS</label></button>
-        <!-- have it pop a list up of current items in the range requirements list and then from the pop up of the current items you can select each one you wannt to remove then hit a remove button in the pop up page. from there you'll get an alert "Are you sure you want to remove the current items?" followed by a yes or no. -->
-        <button id="rm_msn_reqs" class="styledButton"><label>REMOVE REQUIREMENTS</label></button>
-        <ol id="requirement-list">
-            <li class="rangeRequirements"><label>Sensors have to be scheduled</label><input type="checkbox"></li>
-        </ol>
+    <main  id="root">
+      <main class="initialP1age">
+        <aside class="addInfo">
+          <span class="titlesForPages"><h2>SELECT INFORMATION YOU WANT TO ADD</h2></span>
+          <!-- this selector will have a pop up form that you fill out based on the option selected. It will then populate the information into the appropriate areas on certain pages -->
+          <select id="select_edit_options">
+            <option>Range Sensors</option>
+            <option>Range Crew</option>
+            <option>Range Contacts</option>
+            <option>Units</option>
+            <option>PACE</option>
+            <option>SUT</option>
+          </select>
+          <button type="add-info-to-cards" name="add-info-to-cards">CLICK TO ADD</button>
+        </aside>
+        <nav class="listOfReqs">
+          <span class="titlesForPages"><h2>LIST OF ALL PLANNING REQUIREMENTS</h2></span>
+          <!-- this button will ask you if you hit add requirements a button will pop up asking you to make a new item to be inserted into the list. Then you'll be propted to via an alert or pop up window to confirm that you want to add. -->
+          <button id="add_msn_reqs" class="styledButton"><label>ADD REQUIREMENTS</label></button>
+          <!-- have it pop a list up of current items in the range requirements list and then from the pop up of the current items you can select each one you wannt to remove then hit a remove button in the pop up page. from there you'll get an alert "Are you sure you want to remove the current items?" followed by a yes or no. -->
+          <button id="rm_msn_reqs" class="styledButton"><label>REMOVE REQUIREMENTS</label></button>
+          <ol id="requirement-list">
+              <li class="rangeRequirements"><label>Sensors have to be scheduled</label><input type="checkbox"></li>
+          </ol>
 
-      </nav>
+        </nav>
+      </main>
+      <span class="popups">
+              <!-- Popup Modal for Adding Requirements -->
+      <div id="popup-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2>Add New Requirement</h2>
+            <label for="new-requirement">Requirement:</label>
+            <input type="text" id="new-requirement" name="new-requirement">
+            <button id="save-requirement" class="styledButton">Save</button>
+        </div>
+    </div>
+
+    <!-- Popup Modal For Adding Range Sensors -->
+    <div id="sensor-popup-model">
+      <div>
+
+      </div>
+    </div>
+      </span>
     </main>
   </body>
   <footer>
     <!-- this aside will be placed linear accross the bottom and will be populating on every page loaded -->
     <aside class="rangeCardPages">
       <ul>
-        <li class="titleCard"><label><link href="./pages/title.html/" name="TitleCard">Title Card</label></li>
+        <li class="titleCard"><label><link href="./Pages/Cards/Title-Card.html/" name="TitleCard">Title Card</label></li>
         <li class="contractsCard"><label><link href="./pages/contracts.html/" name="ContractsCard">Contracts Card</label></li>
-        <li class="xyzCard"><label><link href="./pages/xyz.html/" name="XYZCard">XYZCard</label></li>
+        <li class="xyzCard"><label><link href="./Pages/Cards/XYZ.html/" name="XYZCard">XYZCard</label></li>
         <li class="xyzCard"><label><link href="./pages/xyz.html/" name="XYZCard">XYZCard</label></li>
         <li class="xyzCard"><label><link href="./pages/xyz.html/" name="XYZCard">XYZCard</label></li>
         <li class="xyzCard"><label><link href="./pages/xyz.html/" name="XYZCard">XYZCard</label></li>
       </ul>
 
-      <!-- Popup Modal for Adding Requirements -->
-      <div id="popup-modal" class="modal">
-          <div class="modal-content">
-              <span class="close-button">&times;</span>
-              <h2>Add New Requirement</h2>
-              <label for="new-requirement">Requirement:</label>
-              <input type="text" id="new-requirement" name="new-requirement">
-              <button id="save-requirement" class="styledButton">Save</button>
-          </div>
-      </div>
 
-      <!-- Popup Modal For Adding Range Sensors -->
-      <div id="sensor-popup-model">
-        <div>
-
-        </div>
-      </div>
 
       <!-- be able to view the read me -->
       <a><link href="/README.md" name="ReadMe">Read Me</a>

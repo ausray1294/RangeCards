@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensor Management</title>
+  <script type="module" src="./scripts/main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+</head>
+<body>
+  <header class="titlesForPages"><h1>Adaptive Range Guide</h1></header>
+  <div class="pageTabs">
+    <button class="naviTabs" onclick="location.href='./Pages/Cards/Title-Card.html'"><label>Title Card</label></button>
+    <button class="naviTabs" onclick="location.href='./Pages/Cards/Contract-Card.html'"><label>Contract Card</label></button>
+  </div>
+  <main>
+    <button id="show-add-sensor-form">Add Sensor</button>
+    <div id="addSensorModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Add Sensor</h2>
+        <form id="add-sensor-form">
+          <input type="text" id="sensorName" name="sensorName" placeholder="Sensor Name" required>
+          <label>Sensor Type</label>
+          <select id="sensorType" name="sensorType" required>
+            <option value="electro-optical">Electro-Optical</option>
+            <option value="radar">Radar</option>
+          </select>
+          <input type="text" id="sensorOwner" name="sensorOwner" placeholder="Owner" required>
+          <!-- Electro-Optical Specific Fields -->
+          <div id="electro-optical-fields" class="sensor-specific-fields">
+            <input type="text" id="latitude" name="latitude" placeholder="Latitude" required>
+            <input type="text" id="longitude" name="longitude" placeholder="Longitude" required>
+            <input type="text" id="look-angle-east" name="look-angle-east" placeholder="Look Angle-East" required>
+            <input type="text" id="look-angle-west" name="look-angle-west" placeholder="Look Angle-West" required>
+            <input type="text" id="data-types" name="data-types" placeholder="Data Types" required>
+            <input type="number" id="eo-wavelength" name="eoWavelength" placeholder="Wavelength (nm)" step="0.01">
+            <input type="number" id="eo-sensitivity" name="eoSensitivity" placeholder="Sensitivity (Lux)" step="0.01">
+          </div>
+          <!-- Radar Specific Fields -->
+          <div id="radar-fields" class="sensor-specific-fields">
+            <input type="text" id="latitude" name="latitude" placeholder="Latitude" required>
+            <input type="text" id="longitude" name="longitude" placeholder="Longitude" required>
+            <input type="text" id="look-angle-east" name="look-angle-east" placeholder="Look Angle-East" required>
+            <input type="text" id="look-angle-west" name="look-angle-west" placeholder="Look Angle-West" required>
+            <input type="text" id="data-types" name="data-types" placeholder="Data Types" required>
+            <input type="number" id="radar-frequency" name="radarFrequency" placeholder="Frequency (GHz)" step="0.01">
+            <input type="number" id="radar-power" name="radarPower" placeholder="Power (kW)" step="0.01">
+          </div>
+          <button type="submit">Add Sensor</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <section>
+    <h2>Added Sensors</h2>
+    <ul id="sensor-list"></ul>
+  </section>
+  <div id="sensorDetailsModal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Sensor Details</h2>
+      <p id="sensorDetails"></p>
+    </div>
+  </div>
+  <footer>
+    <aside class="rangeCardPages">
+      <ul>
+        <li><label><a href="./Pages/Cards/Title-Card.html">Title Card</a></label></li>
+        <li><label><a href="./pages/contracts.html">Contracts Card</a></label></li>
+        <li><label><a href="./Pages/Cards/XYZ.html">XYZ Card</a></label></li>
+      </ul>
+      <a href="/README.md">Read Me</a>
+    </aside>
+  </footer>
+</body>
+</html>

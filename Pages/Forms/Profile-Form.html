@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile Management</title>
+  <script type="module" src="./scripts/main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+</head>
+<body>
+  <header class="titlesForPages">
+    <h1>Adaptive Range Guide</h1>
+  </header>
+  <div class="pageTabs">
+    <button class="naviTabs" name="Title-Card" onclick="location.href='./Pages/Cards/Title-Card.html'"><label>Title Card</label></button>
+    <button class="naviTabs" name="Contract-Card" onclick="location.href='./Pages/Cards/Contract-Card.html'"><label>Contract Card</label></button>
+  </div>
+  <main>
+    <button id="show-add-profile-form">Add Profile</button>
+    <section>
+      <h2>Profiles</h2>
+      <ul id="profilesList"></ul>
+    </section>
+    <!-- The Modal -->
+    <div id="addProfileModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Add Profile</h2>
+        <form id="add-profile-form">
+          <input type="text" id="nameFirst" name="nameFirst" placeholder="First Name" required>
+          <input type="text" id="nameLast" name="nameLast" placeholder="Last Name" required>
+          <input type="text" id="unit" name="unit" placeholder="Unit" required>
+          <input type="text" id="primaryNumber" name="primaryNumber" placeholder="Primary Number" required>
+          <input type="email" id="emailNIPR" name="emailNIPR" placeholder="Email NIPR" required>
+          <input type="email" id="emailJWICS" name="emailJWICS" placeholder="Email JWICS" required>
+          <input type="text" id="callSign" name="callSign" placeholder="Call Sign">
+          <input type="checkbox" id="smc" name="smc"><label>SMC Crew</label>
+          <button type="submit">Add Profile</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <aside class="rangeCardPages">
+      <ul>
+        <li><label><a href="./Pages/Cards/Title-Card.html">Title Card</a></label></li>
+        <li><label><a href="./pages/contracts.html">Contracts Card</a></label></li>
+        <li><label><a href="./Pages/Cards/XYZ.html">XYZ Card</a></label></li>
+      </ul>
+      <a href="/README.md">Read Me</a>
+    </aside>
+  </footer>
+</body>
+</html>

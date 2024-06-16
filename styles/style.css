@@ -150,6 +150,11 @@ nav {
   cursor: pointer;
 }
 
+.under-maintenance {
+  background-color: yellow;
+  color: black;
+}
+
 /* Footer */
 footer {
   background-color: #000000;
@@ -175,7 +180,7 @@ footer ul li a {
 }
 
 footer ul li a:hover {
-  color: #FF8C00; /* Neon Orange */
+  color: #FF8C00; /* Neon Orange */;
 }
 
 /* Specific link color */
