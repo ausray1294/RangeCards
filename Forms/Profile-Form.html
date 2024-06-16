@@ -3,18 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Profile Management</title>
-  <script type="module" src="./scripts/main.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  <title>Profile Form</title>
+  <link rel="stylesheet" type="text/css" href="./style.css">
+  <script type="module" src="./main.js" defer></script>
 </head>
 <body>
   <header class="titlesForPages">
     <h1>Adaptive Range Guide</h1>
   </header>
-  <div class="pageTabs">
-    <button class="naviTabs" name="Title-Card" onclick="location.href='./Pages/Cards/Title-Card.html'"><label>Title Card</label></button>
-    <button class="naviTabs" name="Contract-Card" onclick="location.href='./Pages/Cards/Contract-Card.html'"><label>Contract Card</label></button>
-  </div>
+  <!-- NAVIGATION TABS -->
+  <nav class="pageTabs">
+    <div class="dropdown">
+      <button class="dropbtn">Cards</button>
+      <div class="dropdown-content">
+        <a href="./Pages/Cards/Title-Card.html">Title Card</a>
+        <a href="./Pages/Cards/Test-Plan.html">Test Plan</a>
+        <a href="./Pages/Cards/Communication-Plan.html">Communication Plan</a>
+        <a href="./Pages/Cards/Sensor-RSO-Plan.html">Sensor & RSO Plan</a>
+        <a href="./Pages/Cards/Notes-Card.html">Notes Card</a>
+        <a href="./Pages/Cards/AnnexA-RMS.html">Annex A (RMS)</a>
+        <a href="./Pages/Cards/AnnexB-Operations.html">Annex B (Operations)</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Forms</button>
+      <div class="dropdown-content">
+        <a href="./Pages/Forms/Profile-Form.html">Profile Form</a>
+        <a href="./Pages/Forms/Sensor-Form.html">Sensor Form</a>
+        <a href="./Pages/Forms/Operation-Room-Form.html">Operation Room Form</a>
+        <a href="./Pages/Forms/SUT-Form.html">SUT Form</a>
+        <a href="./Pages/Forms/Contracts-Form.html">Contracts Form</a>
+        <a href="./Pages/Forms/MD-Form.html">MD Form</a>
+        <a href="./Pages/Forms/Mission-Form.html">Mission Form</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Documentation</button>
+      <div class="dropdown-content">
+        <a href="./Pages/Documentation/ORSA.html">ORSA</a>
+        <a href="./Pages/Documentation/ORSM.html">ORSM</a>
+        <a href="./Pages/Documentation/ORSR.html">ORSR</a>
+        <a href="./Pages/Documentation/Training.html">Training</a>
+      </div>
+    </div>
+  </nav>
   <main>
     <button id="show-add-profile-form">Add Profile</button>
     <section>

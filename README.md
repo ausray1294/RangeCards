@@ -36,3 +36,20 @@ Computers/Printers - NIPR/SIPR/JWICS at desk/in area
 
 
 
+*_Documents currently being worked on_*
+[] Add classification banner to the top of the Title Page - have it populate on all range cards
+[] propogation - need to build out the functions to add appropriate data
+[]Contracts form - add field to add contracts
+[]MD Form - take in information provided by MD to populate the Range Cards
+[] Mission Form - take in information on basic mission overview
+[] Operation Rooms - take in any data for operation rooms and their capes
+[]Out-Of-Service needs to be able to block user from scheduling if they aren't available
+[]Profile - need to be able to update/remove profiles
+[]Profile - needs to have block for crew qualified
+[]SUT Form - Needs to be able to take in a TLE and add to range cards
+[]
+[]
+[]
+[]
+[]
+[]

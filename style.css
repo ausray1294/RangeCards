@@ -1,68 +1,67 @@
 /* General Styles */
 body {
   font-family: Helvetica, Arial, sans-serif;
-}
-.rangeRequirements:has(input:checked) {
-  text-decoration: line-through blue;
-  font-style: italic ;
-}
-
-.rangeRequirements label {
-  font-size: auto;
-}
-
-body {
   margin: 0;
-  font-family: Arial, sans-serif;
   background-color: #000000;
   color: #FFFFFF;
 }
 
-/* Header */
-header {
+.header {
   background-color: #000000;
   padding: 20px;
   text-align: center;
-  color: #FF5733; /* Burnt Orange */
+  color: #0059FF; /* Blue */
 }
 
-/* Search Bar */
-.searchBarWrapper {
-  display: flex;
-  justify-content: center;
-  padding: 20px;
-  background-color: #111111;
+/* Dropdown Styles */
+.pageTabs {
+  overflow: hidden;
+  background-color: #0059FF;
 }
-
-.searchBarWrapper input[type="search"] {
-  width: 60%;
-  padding: 10px;
+.pageTabs .dropdown {
+  float: left;
+  overflow: hidden;
+}
+.pageTabs .dropdown .dropbtn {
+  font-size: 16px;
   border: none;
-  border-radius: 5px;
-  margin-right: 10px;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
-
-.searchBarWrapper .searchBarButton {
-  background-color: #FF5733; /* Burnt Orange */
-  color: #FFFFFF;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
+.pageTabs a:hover, .dropdown:hover .dropbtn {
+  background-color: #007BFF;
 }
-
-.searchBarWrapper .searchBarButton:hover {
-  background-color: #FF8C00; /* Neon Orange */
+.pageTabs .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #80BFFF; /* Paler blue */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.pageTabs .dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.pageTabs .dropdown-content a:hover {
+  background-color: #007BFF;
+  color: white;
+}
+.pageTabs .dropdown:hover .dropdown-content {
+  display: block;
 }
 
 /* Main Content */
 main {
   padding: 20px;
-}
-
-main span {
-  text-decoration: underline;
-  text-shadow: #FF8C00 2px;
 }
 
 select {
@@ -76,12 +75,6 @@ select {
   cursor: pointer;
 }
 
-nav {
-  background-color: #111111;
-  padding: 20px;
-  border-radius: 5px;
-}
-
 .styledButton {
   background-color: #FF5733; /* Burnt Orange */
   color: #FFFFFF;
@@ -91,7 +84,6 @@ nav {
   border-radius: 5px;
   margin-bottom: 10px;
 }
-
 .styledButton:hover {
   background-color: #FF8C00; /* Neon Orange */
 }
@@ -105,9 +97,12 @@ nav {
   cursor: pointer;
   transition: all 0.3s;
 }
-
 .rangeRequirements:hover {
   background-color: #FF8C00; /* Neon Orange */
+}
+.reded-out {
+  background-color: red;
+  color: white; /* Optional, to contrast better with the grey background */
 }
 
 /* Modal Styles */
@@ -122,7 +117,6 @@ nav {
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.75);
 }
-
 .modal-content {
   background-color: #111111;
   margin: 15% auto;
@@ -131,73 +125,58 @@ nav {
   width: 80%;
   border-radius: 5px;
 }
-
-.modal-content input {
-  width: calc(100% - 30%);
-  height: auto;
-}
-
 .close-button {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
-
 .close-button:hover,
 .close-button:focus {
   color: #FF8C00; /* Neon Orange */
   cursor: pointer;
 }
 
-.under-maintenance {
-  background-color: yellow;
-  color: black;
+/* Sensor List */
+#sensor-list li {
+  background-color: #111111;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#sensor-list li:hover {
+  background-color: #FF8C00; /* Neon Orange */
 }
 
 /* Footer */
 footer {
   background-color: #000000;
-  color: #FF5733; /* Burnt Orange */
+  color: #0059FF; /* Blue */
   padding: 20px;
   text-align: center;
 }
-
 footer ul {
   list-style-type: none;
   padding: 0;
 }
-
 footer ul li {
   display: inline-block;
   margin: 0 10px;
 }
-
 footer ul li a {
-  color: #FF5733; /* Burnt Orange */
+  color: #0059FF; /* Blue */
   text-decoration: none;
   font-weight: bold;
 }
-
 footer ul li a:hover {
-  color: #FF8C00; /* Neon Orange */;
+  color: #007BFF; /* Paler Blue */
 }
-
-/* Specific link color */
 a {
-  color: #FF5733; /* Burnt Orange */;
+  color: #0059FF; /* Blue */
   text-decoration: none;
 }
-
 a:hover {
-  color: #FF8C00; /* Neon Orange */;
-}
-
-.reded-out {
-  background-color: red;
-  color: white; /* Optional, to contrast better with grey background */
-}
-
-.titlesForPages {
-  color: rgb(0, 89, 255);
+  color: #007BFF; /* Paler Blue */
 }

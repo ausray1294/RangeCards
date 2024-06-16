@@ -1,10 +1,10 @@
-import { Sensor, ElectricalOptical, Radar } from './class_main.js';
+import { Sensor, ElectroOptical, Radar } from './class_main.js';
 
 export function addSensor(sensor) {
   if (sensor.type === 'radar') {
     Radar.addRadar(sensor);
   } else if (sensor.type === 'electro-optical') {
-    ElectricalOptical.addEO(sensor);
+    ElectroOptical.addEO(sensor);
   }
 }
 
@@ -12,19 +12,7 @@ export function removeSensor(sensor) {
   if (sensor.type === 'radar') {
     Radar.removeRadar(sensor);
   } else if (sensor.type === 'electro-optical') {
-    ElectricalOptical.removeEO(sensor);
-  }
-}
-
-export function scheduleMaintenance(sensorName, period) {
-  const sensor = Sensor.sensors.find(sensor => sensor.name === sensorName);
-  if (sensor) {
-    sensor.isUnderMaintenance = true;
-    setTimeout(() => {
-      sensor.isUnderMaintenance = false;
-      updateSensorListUI();
-    }, period);
-    updateSensorListUI();
+    ElectroOptical.removeEO(sensor);
   }
 }
 
@@ -34,9 +22,8 @@ export function updateSensorListUI() {
   Sensor.sensors.forEach(sensor => {
     const sensorElement = document.createElement('li');
     sensorElement.innerText = `Name: ${sensor.name}, Owner: ${sensor.owner}, Type: ${sensor.type}`;
-    sensorElement.classList.add('sensor-item');
     if (sensor.isUnderMaintenance) {
-      sensorElement.classList.add('under-maintenance');
+      sensorElement.style.backgroundColor = 'yellow';
     }
     sensorElement.addEventListener('click', () => showSensorDetails(sensor));
     sensorListElement.appendChild(sensorElement);
@@ -56,14 +43,10 @@ function showSensorDetails(sensor) {
     Look Angle West: ${sensor.lookAngleWest} <br>
     Data Types: ${sensor.dataType} <br>`;
 
-  if (sensor instanceof ElectricalOptical) {
-    sensorDetailsText += `
-      Wavelength: ${sensor.wavelength} nm <br>
-      Sensitivity: ${sensor.sensitivity} Lux <br>`;
+  if (sensor instanceof ElectroOptical) {
+    sensorDetailsText += `Wavelength: ${sensor.wavelength} nm <br>Sensitivity: ${sensor.sensitivity} Lux <br>`;
   } else if (sensor instanceof Radar) {
-    sensorDetailsText += `
-      Frequency: ${sensor.frequency} GHz <br>
-      Power: ${sensor.power} kW <br>`;
+    sensorDetailsText += `Frequency: ${sensor.frequency} GHz <br>Power: ${sensor.power} kW <br>`;
   }
 
   sensorDetails.innerHTML = sensorDetailsText;
@@ -77,21 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
   const sensorForm = document.getElementById('add-sensor-form');
   const sensorDetailsModal = document.getElementById('sensorDetailsModal');
 
-  // Show the modal when the "Add Sensor" button is clicked
   addSensorButton.addEventListener('click', () => {
     addSensorModal.style.display = 'block';
   });
 
-  // Hide the modals when the close button is clicked
   closeModalButtons.forEach(button => button.addEventListener('click', () => {
     addSensorModal.style.display = 'none';
     sensorDetailsModal.style.display = 'none';
   }));
 
-  // Handle form submission to add new sensor
   sensorForm.addEventListener('submit', (event) => {
-    event.preventDefault(); // Prevent the form from submitting and refreshing the page
-    // Collect form values
+    event.preventDefault();
     const name = document.getElementById('sensorName').value;
     const type = document.getElementById('sensorType').value;
     const owner = document.getElementById('sensorOwner').value;
@@ -100,28 +79,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const lookAngleEast = document.getElementById('look-angle-east').value;
     const lookAngleWest = document.getElementById('look-angle-west').value;
     const dataType = document.getElementById('data-types').value;
-    // Additional fields for specific sensor types
     let newSensor;
     if (type === 'electro-optical') {
       const wavelength = document.getElementById('eo-wavelength').value;
       const sensitivity = document.getElementById('eo-sensitivity').value;
-      newSensor = new ElectricalOptical(name, owner, latitude, longitude, lookAngleEast, lookAngleWest, 0, dataType, wavelength, sensitivity);
-      ElectricalOptical.addEO(newSensor);
+      newSensor = new ElectroOptical(name, owner, latitude, longitude, lookAngleEast, lookAngleWest, 0, dataType, wavelength, sensitivity);
+      ElectroOptical.addEO(newSensor);
     } else if (type === 'radar') {
       const frequency = document.getElementById('radar-frequency').value;
       const power = document.getElementById('radar-power').value;
       newSensor = new Radar(name, owner, latitude, longitude, lookAngleEast, lookAngleWest, 0, dataType, frequency, power);
       Radar.addRadar(newSensor);
     }
-    // Add the new sensor to the UI list
     addSensor(newSensor);
     updateSensorListUI();
-    // Reset the form and hide the modal
     sensorForm.reset();
     addSensorModal.style.display = 'none';
   });
 
-  // Hide the modal when user clicks outside of the modal content
   window.addEventListener('click', (event) => {
     if (event.target === addSensorModal) {
       addSensorModal.style.display = 'none';

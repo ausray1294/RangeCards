@@ -1,5 +1,5 @@
 class Profile {
-  constructor(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign = "N/A") {
+  constructor(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign = "N/A", smc = false) {
       this.nameFirst = nameFirst;
       this.nameLast = nameLast;
       this.unit = unit;
@@ -7,6 +7,7 @@ class Profile {
       this.emailNIPR = emailNIPR;
       this.emailJWICS = emailJWICS;
       this.callSign = callSign;
+      user.smc = smc;
   }
 
   static profiles = [];
@@ -25,7 +26,7 @@ class Profile {
       return false;
   }
 
-  updateProfile(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign = "N/A") {
+  updateProfile(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign = "N/A", smc = false) {
       for (let user of Profile.profiles) {
           if (user.nameFirst === this.nameFirst && user.nameLast === this.nameLast) {
               user.nameFirst = nameFirst;
@@ -35,6 +36,7 @@ class Profile {
               user.emailNIPR = emailNIPR;
               user.emailJWICS = emailJWICS;
               user.callSign = callSign;
+              user.smc = smc;
               return true;
           }
       }
@@ -42,28 +44,6 @@ class Profile {
   }
 }
 
-class Crew extends Profile {
-  constructor(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign = "N/A", smc = false) {
-      super(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign);
-      this.smc = smc;
-  }
-
-  static operators = [];
-
-  static addProfile(operator) {
-      Crew.operators.push(operator);
-  }
-
-  static removeProfile(operator) {
-      for (let i = 0; i < Crew.operators.length; i++) {
-          if (Crew.operators[i].nameFirst === operator.nameFirst && Crew.operators[i].nameLast === operator.nameLast) {
-              Crew.operators.splice(i, 1);
-              return true;
-          }
-      }
-      return false;
-  }
-}
 
 class Sensor {
   constructor(name, type, owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude) {
@@ -94,7 +74,7 @@ class Sensor {
   }
 }
 
-class ElectricalOptical extends Sensor {
+class ElectroOptical extends Sensor {
   constructor(name, owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude, dataType, wavelength, sensitivity) {
       super(name, 'electro-optical', owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude);
       this.dataType = dataType;
@@ -105,13 +85,13 @@ class ElectricalOptical extends Sensor {
   static eoScopes = [];
 
   static addEO(eoScope) {
-      ElectricalOptical.eoScopes.push(eoScope);
+    ElectroOptical.eoScopes.push(eoScope);
   }
 
   static removeEO(eoScope) {
-      for (let i = 0; i < ElectricalOptical.eoScopes.length; i++) {
-          if (ElectricalOptical.eoScopes[i].name === eoScope.name) {
-              ElectricalOptical.eoScopes.splice(i, 1);
+      for (let i = 0; i < ElectroOptical.eoScopes.length; i++) {
+          if (ElectroOptical.eoScopes[i].name === eoScope.name) {
+            ElectroOptical.eoScopes.splice(i, 1);
               return true;
           }
       }
@@ -145,4 +125,4 @@ class Radar extends Sensor {
 }
 
 // Export all the classes
-export { Profile, Crew, Sensor, ElectricalOptical, Radar };
+export { Profile, Sensor, ElectroOptical, Radar };
