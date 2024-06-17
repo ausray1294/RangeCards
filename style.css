@@ -16,10 +16,11 @@ body {
 /* Dropdown Styles */
 .pageTabs {
   overflow: hidden;
+  flex-direction: row;
+  justify-content: flex-start;
   background-color: #0059FF;
 }
 .pageTabs .dropdown {
-  float: left;
   overflow: hidden;
 }
 .pageTabs .dropdown .dropbtn {
@@ -136,6 +137,17 @@ select {
   color: #FF8C00; /* Neon Orange */
   cursor: pointer;
 }
+
+/* Add a way to make input bar larger
+.container{
+  display: flex;
+  flex-basis: auto;
+}
+
+.container input {
+  flex-basis: auto;
+} */
+
 
 /* Sensor List */
 #sensor-list li {
