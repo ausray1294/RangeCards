@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adaptive Range Guide</title>
-  <link rel="stylesheet" type="text/css" href="./style.css">
-  <script type="module" src="./main.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+  <script type="module" src="../main.js" defer></script>
 </head>
 <body>
   <header>
@@ -15,52 +15,56 @@
   <!-- NAVIGATION TABS -->
   <nav class="pageTabs">
     <div class="dropdown">
+     c
+    </div>
+    <div class="dropdown">
       <button class="dropbtn">Cards</button>
       <div class="dropdown-content">
-        <a href="./Cards/Title-Card.html">Title Card</a>
-        <a href="./Cards/Test-Plan.html">Test Plan</a>
-        <a href="./Cards/Communication-Plan.html">Communication Plan</a>
-        <a href="./Cards/Sensor-RSO-Plan.html">Sensor & RSO Plan</a>
-        <a href="./Cards/Notes-Card.html">Notes Card</a>
-        <a href="./Cards/AnnexA-RMS.html">Annex A (RMS)</a>
-        <a href="./Cards/AnnexB-Operations.html">Annex B (Operations)</a>
+        <a href="../Cards/Title-Card.html">Title Card</a>
+        <a href="../Cards/Test-Plan.html">Test Plan</a>
+        <a href="../Cards/Communication-Plan.html">Communication Plan</a>
+        <a href="../Cards/Sensor-RSO-Plan.html">Sensor & RSO Plan</a>
+        <a href="../Cards/Notes-Card.html">Notes Card</a>
+        <a href="../Cards/AnnexA-RMS.html">Annex A (RMS)</a>
+        <a href="../Cards/AnnexB-Operations.html">Annex B (Operations)</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropbtn">Forms</button>
       <div class="dropdown-content">
-        <a href="./Forms/Profile-Form.html">Profile Form</a>
-        <a href="./Forms/Sensor-Form.html">Sensor Form</a>
-        <a href="./Forms/Operation-Room-Form.html">Operation Room Form</a>
-        <a href="./Forms/SUT-Form.html">SUT Form</a>
-        <a href="./Forms/Contracts-Form.html">Contracts Form</a>
-        <a href="./Forms/MD-Form.html">MD Form</a>
-        <a href="./Forms/Mission-Form.html">Mission Form</a>
+        <a href="../Forms/Profile-Form.html">Profile Form</a>
+        <a href="../Forms/Sensor-Form.html">Sensor Form</a>
+        <a href="../Forms/Operation-Room-Form.html">Operation Room Form</a>
+        <a href="../Forms/SUT-Form.html">SUT Form</a>
+        <a href="../Forms/Contracts-Form.html">Contracts Form</a>
+        <a href="../Forms/MD-Form.html">MD Form</a>
+        <a href="../Forms/Mission-Form.html">Mission Form</a>
       </div>
     </div>
     <div class="dropdown">
       <button class="dropbtn">Documentation</button>
       <div class="dropdown-content">
-        <a href="./Pages/Documentation/ORSA.html">ORSA</a>
-        <a href="./Pages/Documentation/ORSM.html">ORSM</a>
-        <a href="./Pages/Documentation/ORSR.html">ORSR</a>
+        <a href="../Pages/Documentation/ORSA.html">ORSA</a>
+        <a href="../Pages/Documentation/ORSM.html">ORSM</a>
+        <a href="../Pages/Documentation/ORSR.html">ORSR</a>
         <a href="./Pages/Documentation/Training.html">Training</a>
       </div>
     </div>
   </nav>
 
-  <main id="root">
-    <main class="initialPage">
+  <main id="root" class="main-container">
+    <div class="initialPage"> <!-- Note: Changed 'main' to 'div' -->
       <aside class="addInfo">
-        <h2>SELECT INFORMATION YOU WANT TO ADD</h2>
-        <select id="select_edit_options">
-          <option>Range Sensors</option>
-          <option>Range Crew</option>
-          <option>Range Contacts</option>
-          <option>Units</option>
-          <option>PACE</option>
-          <option>SUT</option>
-        </select>
+        <h2 class="showOnHover">Build Your Range</h2>
+        <ul id="select_edit_options">
+          <li><button>Range Sensors</button></li>
+          <li><button>Range Crew</button></li>
+          <li><button>Range Contacts</button></li>
+          <li><button>Units</button></li>
+          <li><button>PACE</button></li>
+          <li><button>SUT</button></li>
+        </ul>
+      </aside>
         <button type="button" name="add-info-to-cards">CLICK TO ADD</button>
       </aside>
       <nav class="listOfReqs">

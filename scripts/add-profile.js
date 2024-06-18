@@ -14,7 +14,8 @@ export function initializeProfileForm() {
       const emailNIPR = document.getElementById('emailNIPR').value;
       const emailJWICS = document.getElementById('emailJWICS').value;
       const callSign = document.getElementById('callSign').value || "N/A";
-      const newProfile = new Profile(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign);
+      const smc = document.getElementById('smc').value || "N/A"
+      const newProfile = new Profile(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign, smc);
 
       Profile.addProfile(newProfile);
       updateProfilesList();
@@ -31,3 +32,5 @@ export function initializeProfileForm() {
     }
   });
 }
+
+// AI I need a remove profile button added and the corisponding code

@@ -7,5 +7,4 @@ document.addEventListener('DOMContentLoaded', () => {
     initializeProfileForm();
     updateSensorListUI();
     console.log('Initialization complete.');
-
 });
