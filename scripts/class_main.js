@@ -124,5 +124,13 @@ class Radar extends Sensor {
   }
 }
 
+class Satellite {
+    constructor(vehicleName, tleLine1, tleLine2) {
+        this.vehicleName = vehicleName;
+        this.tleLine1 = tleLine1;
+        this.tleLine2 = tleLine2;
+    }
+}
+
 // Export all the classes
-export { Profile, Sensor, ElectroOptical, Radar };
+export { Profile, Sensor, Satellite, ElectroOptical, Radar };
