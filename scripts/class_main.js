@@ -1,3 +1,5 @@
+//store profiles for everyone
+
 class Profile {
     constructor(nameFirst, nameLast, unit, primaryNumber, emailNIPR, emailJWICS, callSign = "N/A", smc = false) {
         this.nameFirst = nameFirst;
@@ -44,6 +46,7 @@ class Profile {
     }
 }
 
+//store operation rooms
 class OperationRoom {
     constructor(room, location, phoneNumbers = [], systems = [], printers, entryRequirements = '') {
         this.room = room;
@@ -70,7 +73,7 @@ class OperationRoom {
     }
 }
 
-
+//superclass of sensors
 class Sensor {
     constructor(name, type, owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude) {
         this.name = name;
@@ -98,8 +101,7 @@ class Sensor {
         }
         return false;
     }
-}
-
+}//subclass for EO
 class ElectroOptical extends Sensor {
     constructor(name, owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude, dataType, wavelength, sensitivity) {
         super(name, 'electro-optical', owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude);
@@ -124,7 +126,7 @@ class ElectroOptical extends Sensor {
         return false;
     }
 }
-
+// subclass for radar
 class Radar extends Sensor {
     constructor(name, owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude, dataType, frequency, power) {
         super(name, 'radar', owner, latitude, longitude, lookAngleEast, lookAngleWest, altitude);
@@ -150,6 +152,7 @@ class Radar extends Sensor {
     }
 }
 
+//staging area for satellites
 class Satellite {
     constructor(tleLine1, tleLine2, name) {
         this.tleLine1 = tleLine1;

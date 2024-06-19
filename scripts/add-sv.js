@@ -1,0 +1,1 @@
+//handles information for sv-form to be pushed into satellite class

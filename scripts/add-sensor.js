@@ -1,3 +1,5 @@
+// handles sensors being add on the sensor form
+
 import { Sensor, ElectroOptical, Radar } from './class_main.js';
 
 export function addSensor(sensor) {

@@ -1,3 +1,5 @@
+//handle the dom for adding and removing profiles
+
 import { Profile } from './class_main.js';
 
 export function initializeProfileForm() {
