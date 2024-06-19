@@ -1,8 +1,6 @@
-// add a function here that takes in a tle/state and gives a location for
-// the sut based of expected date of operation. have the data plug into
-// TitleCard, AnnexA and AnnexB
-
 const satellite = require('satellite.js');
+const Satellite = require('../scripts/class_main.js')
+const MissionDetail = require('../scripts/class_mission.js')
 
 /**
  * Function to propagate the state of a Space Vehicle (satellite) over a given period using TLE data
@@ -70,3 +68,6 @@ const endTime = new Date('2021-10-01T01:00:00Z');
 const stepMinutes = 10;
 
 propagateSatelliteState(tleLine1, tleLine2, startTime, endTime, stepMinutes);
+
+
+propagateSatelliteState(Satellite.this.tleLine1, Satellite.this.tleLine2, MissionDetail.this.startTime, MissionDetail.this.startTime, stepMinutes = 200)

@@ -1,41 +1,37 @@
 /* General Styles */
 body {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica', 'Arial', sans-serif;
   margin: 0;
-  background-color: #000000;
-  color: #FFFFFF;
+  background-color: #000;
+  color: #fff;
 }
 
 header {
-  background-color: #000000;
+  background-color: #000;
   padding: 20px;
   text-align: center;
-  color: #0059FF; /* Blue */
+  color: #0059FF;
 }
 
-/* Dropdown Styles */
 .pageTabs {
-  overflow: hidden;
-  flex-direction: row;
-  justify-content: center;
-  background-color: #0059FF;
   display: flex;
   justify-content: center;
+  background-color: #0059FF;
+  overflow: hidden;
 }
 
 .pageTabs .dropdown {
-  overflow: hidden;
+  position: relative;
 }
 
-.pageTabs .dropdown .dropbtn {
+.pageTabs .dropbtn {
   font-size: 16px;
   border: none;
   outline: none;
   color: white;
   padding: 14px 16px;
   background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+  cursor: pointer;
 }
 
 .pageTabs a:hover,
@@ -46,14 +42,13 @@ header {
 .pageTabs .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #80BFFF; /* Paler blue */
+  background-color: #80BFFF;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
 .pageTabs .dropdown-content a {
-  float: none;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
@@ -70,24 +65,21 @@ header {
   display: block;
 }
 
-/* Main Content */
-main {
+.main-container {
   padding: 20px;
 }
 
 .addInfo {
-  width: 200px; /* Adjusted width */
+  width: 200px;
   padding: 10px;
   border: 1px solid #444;
-  background-color: #111111;
-  color: #FFFFFF;
+  background-color: #111;
+  color: #fff;
   border-radius: 5px;
   margin-bottom: 20px;
-  cursor: pointer;
-  justify-content: flex-end;
   position: absolute;
   right: 20px;
-  display: none; /* Initially hide */
+  display: none;
 }
 
 .main-container:hover .addInfo {
@@ -100,17 +92,17 @@ main {
 }
 
 .addInfo ul li {
-  background-color: #FF5733; /* Burnt Orange */
-  color: #FFFFFF;
+  background-color: #FF5733;
+  color: #fff;
   text-align: center;
   margin-bottom: 10px;
-  padding: 5px; /* Make buttons smaller */
+  padding: 5px;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .addInfo ul li:hover {
-  background-color: #FF8C00; /* Neon Orange */
+  background-color: #FF8C00;
 }
 
 .addInfo ul li button {
@@ -124,8 +116,8 @@ main {
 }
 
 .styledButton {
-  background-color: #FF5733; /* Burnt Orange */
-  color: #FFFFFF;
+  background-color: #FF5733;
+  color: #fff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
@@ -134,12 +126,11 @@ main {
 }
 
 .styledButton:hover {
-  background-color: #FF8C00; /* Neon Orange */
+  background-color: #FF8C00;
 }
 
-/* Requirement List */
 .rangeRequirements {
-  background-color: #111111;
+  background-color: #111;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -148,15 +139,14 @@ main {
 }
 
 .rangeRequirements:hover {
-  background-color: #FF8C00; /* Neon Orange */
+  background-color: #FF8C00;
 }
 
 .reded-out {
   background-color: red;
-  color: white; /* Optional, to contrast better with the grey background */
+  color: white;
 }
 
-/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -170,7 +160,7 @@ main {
 }
 
 .modal-content {
-  background-color: #111111;
+  background-color: #111;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -187,7 +177,7 @@ main {
 
 .close-button:hover,
 .close-button:focus {
-  color: #FF8C00; /* Neon Orange */
+  color: #FF8C00;
   cursor: pointer;
 }
 
@@ -200,9 +190,8 @@ main {
   flex: 1;
 }
 
-/* Sensor List */
 #sensor-list li {
-  background-color: #111111;
+  background-color: #111;
   padding: 10px;
   border-radius: 5px;
   margin-bottom: 10px;
@@ -211,13 +200,12 @@ main {
 }
 
 #sensor-list li:hover {
-  background-color: #FF8C00; /* Neon Orange */
+  background-color: #FF8C00;
 }
 
-/* Footer */
 footer {
-  background-color: #000000;
-  color: #0059FF; /* Blue */
+  background-color: #000;
+  color: #0059FF;
   padding: 20px;
   text-align: center;
 }
@@ -233,20 +221,20 @@ footer ul li {
 }
 
 footer ul li a {
-  color: #0059FF; /* Blue */
+  color: #0059FF;
   text-decoration: none;
   font-weight: bold;
 }
 
 footer ul li a:hover {
-  color: #007BFF; /* Paler Blue */
+  color: #007BFF;
 }
 
 a {
-  color: #0059FF; /* Blue */
+  color: #0059FF;
   text-decoration: none;
 }
 
 a:hover {
-  color: #007BFF; /* Paler Blue */
+  color: #007BFF;
 }

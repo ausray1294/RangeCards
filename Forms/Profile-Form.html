@@ -4,72 +4,72 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Form</title>
-  <link rel="stylesheet" type="text/css" href="../style.css">
-  <script type="module" type="text/js" src="../main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js" defer></script>
 </head>
 <body>
-  <header class="titlesForPages">
+  <header>
     <h1>Adaptive Range Guide</h1>
   </header>
-    <!-- NAVIGATION TABS -->
-    <nav class="pageTabs">
-      <div class="dropdown">
-        <button class ="dropbtn" href="../index.html" name="HOME">HOME</button>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Cards</button>
-        <div class="dropdown-content">
-          <a href="../Cards/Title-Card.html">Title Card</a>
-          <a href="../Cards/Test-Plan.html">Test Plan</a>
-          <a href="../Cards/Communication-Plan.html">Communication Plan</a>
-          <a href="../Cards/Sensor-RSO-Plan.html">Sensor & RSO Plan</a>
-          <a href="../Cards/Notes-Card.html">Notes Card</a>
-          <a href="../Cards/AnnexA-RMS.html">Annex A (RMS)</a>
-          <a href="../Cards/AnnexB-Operations.html">Annex B (Operations)</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Forms</button>
-        <div class="dropdown-content">
-          <a href="../Forms/Profile-Form.html">Profile Form</a>
-          <a href="../Forms/Sensor-Form.html">Sensor Form</a>
-          <a href="../Forms/Operation-Room-Form.html">Operation Room Form</a>
-          <a href="../Forms/SUT-Form.html">SUT Form</a>
-          <a href="../Forms/Contracts-Form.html">Contracts Form</a>
-          <a href="../Forms/MD-Form.html">MD Form</a>
-          <a href="../Forms/Mission-Form.html">Mission Form</a>
-        </div>
-      </div>
-      <div class="dropdown">
-        <button class="dropbtn">Documentation</button>
-        <div class="dropdown-content">
-          <a href="../Pages/Documentation/ORSA.html">ORSA</a>
-          <a href="../Pages/Documentation/ORSM.html">ORSM</a>
-          <a href="../Pages/Documentation/ORSR.html">ORSR</a>
-          <a href="../Pages/Documentation/Training.html">Training</a>
-        </div>
-      </div>
-    </nav>
 
-  <main id="root" class="main-container">
-    <div class="initialPage"> <!-- Note: Changed 'main' to 'div' -->
-      <aside class="addInfo">
-        <h2 class="showOnHover">Build Your Range</h2>
-        <ul id="select_edit_options">
-          <li><button>Range Sensors</button></li>
-          <li><button>Range Crew</button></li>
-          <li><button>Range Contacts</button></li>
-          <li><button>Units</button></li>
-          <li><button>PACE</button></li>
-          <li><button>SUT</button></li>
-        </ul>
-        </aside>
-        <button id="show-add-profile-form">Add Profile</button>
-        <div id="addProfileModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button">&times;</span>
-                <h2>Add Profile</h2>
-                <form id="add-profile-form">
+  <!-- NAVIGATION TABS -->
+  <nav class="pageTabs">
+    <div class="dropdown">
+      <button class="dropbtn" name="HOME" href="../index.html"><i class="fas fa-home"></i> HOME</button>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-clipboard-list"></i> Cards</button>
+      <div class="dropdown-content">
+        <a href="Cards/Title-Card.html"><i class="fas fa-file-alt"></i> Title Card</a>
+        <a href="Cards/Test-Plan.html"><i class="fas fa-tasks"></i> Test Plan</a>
+        <a href="Cards/Communication-Plan.html"><i class="fas fa-comments"></i> Communication Plan</a>
+        <a href="Cards/Sensor-RSO-Plan.html"><i class="fas fa-radar"></i> Sensor & RSO Plan</a>
+        <a href="Cards/Notes-Card.html"><i class="fas fa-sticky-note"></i> Notes Card</a>
+        <a href="Cards/AnnexA-RMS.html"><i class="fas fa-folder-open"></i> Annex A (RMS)</a>
+        <a href="Cards/AnnexB-Operations.html"><i class="fas fa-folder-open"></i> Annex B (Operations)</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-file-signature"></i> Forms</button>
+      <div class="dropdown-content">
+        <a href="Forms/Profile-Form.html"><i class="fas fa-user"></i> Profile Form</a>
+        <a href="Forms/Sensor-Form.html"><i class="fas fa-radar"></i> Sensor Form</a>
+        <a href="Forms/Operation-Room-Form.html"><i class="fas fa-desktop"></i> Operation Room Form</a>
+        <a href="Forms/SUT-Form.html"><i class="fas fa-rocket"></i> SUT Form</a>
+        <a href="Forms/Contracts-Form.html"><i class="fas fa-file-contract"></i> Contracts Form</a>
+        <a href="Forms/MD-Form.html"><i class="fas fa-file-medical-alt"></i> MD Form</a>
+        <a href="Forms/Mission-Form.html"><i class="fas fa-flag"></i> Mission Form</a>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn"><i class="fas fa-book"></i> Documentation</button>
+      <div class="dropdown-content">
+        <a href="Pages/Documentation/ORSA.html"><i class="fas fa-book-open"></i> ORSA</a>
+        <a href="Pages/Documentation/ORSM.html"><i class="fas fa-book-open"></i> ORSM</a>
+        <a href="Pages/Documentation/ORSR.html"><i class="fas fa-book-open"></i> ORSR</a>
+        <a href="Pages/Documentation/Training.html"><i class="fas fa-chalkboard-teacher"></i> Training</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="main-container">
+    <aside class="addInfo">
+      <h2 class="showOnHover">Build Your Range</h2>
+      <ul id="select_edit_options">
+        <li><button><i class="fas fa-radar"></i> Range Sensors</button></li>
+        <li><button><i class="fas fa-users"></i> Range Crew</button></li>
+        <li><button><i class="fas fa-address-book"></i> Range Contacts</button></li>
+        <li><button><i class="fas fa-project-diagram"></i> PACE</button></li>
+        <li><button><i class="fas fa-rocket"></i> SUT</button></li>
+      </ul>
+    </aside>
+    <button id="show-add-profile-form" class="styledButton"><i class="fas fa-user-plus"></i> Add Profile</button>
+    <div id="addProfileModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Add Profile</h2>
+        <form id="add-profile-form">
           <input type="text" id="nameFirst" name="nameFirst" placeholder="First Name" required>
           <input type="text" id="nameLast" name="nameLast" placeholder="Last Name" required>
           <input type="text" id="unit" name="unit" placeholder="Unit" required>
@@ -77,34 +77,31 @@
           <input type="email" id="emailNIPR" name="emailNIPR" placeholder="Email NIPR" required>
           <input type="email" id="emailJWICS" name="emailJWICS" placeholder="Email JWICS" required>
           <input type="text" id="callSign" name="callSign" placeholder="Call Sign">
-          <!-- AI if checked- toggle smc -->
-          <input type="checkbox" id="smc" name="smc"> required<label>SMC Crew</label>
-          <button type="submit">Add Profile</button>
+          <input type="checkbox" id="smc" name="smc"><label for="smc">SMC Crew</label>
+          <button type="submit" class="styledButton"><i class="fas fa-save"></i> Add Profile</button>
         </form>
       </div>
-  </div>
-</div>
-<section>
-<h2>Profiles</h2>
-<ul id="profilesList"></ul>
-</section>
-<div id="profileDetailsModal" class="modal">
-<div class="modal-content">
-  <span class="close-button">&times;</span>
-  <h2>Profile Details</h2>
-  <p id="profileDetails"></p>
-</div>
-</div>
-</main>
-  </body>
+    </div>
+    <section>
+      <h2>Profiles</h2>
+      <ul id="profilesList"></ul>
+    </section>
+    <div id="profileDetailsModal" class="modal">
+      <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Profile Details</h2>
+        <p id="profileDetails"></p>
+      </div>
+    </div>
+  </main>
+
   <footer>
-    <aside class="rangeCardPages">
-      <ul>
-        <li><label><a href="./Pages/Cards/Title-Card.html">Title Card</a></label></li>
-        <li><label><a href="./pages/contracts.html">Contracts Card</a></label></li>
-        <li><label><a href="./Pages/Cards/XYZ.html">XYZ Card</a></label></li>
-      </ul>
-      <a href="/README.md">Read Me</a>
-    </aside>
+    <ul>
+      <li><a href="Pages/Cards/Title-Card.html"><i class="fas fa-file-alt"></i> Title Card</a></li>
+      <li><a href="Pages/Cards/Contracts.html"><i class="fas fa-file-contract"></i> Contracts Card</a></li>
+      <li><a href="Pages/Cards/XYZ.html"><i class="fas fa-file-alt"></i> XYZ Card</a></li>
+    </ul>
+    <a href="README.md"><i class="fas fa-book-reader"></i> Read Me</a>
   </footer>
+</body>
 </html>

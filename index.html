@@ -4,8 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Adaptive Range Guide</title>
-  <link rel="stylesheet" type="text/css" href="../style.css">
-  <script type="module" src="../main.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="main.js" defer></script>
 </head>
 <body>
   <header>
@@ -15,125 +16,88 @@
   <!-- NAVIGATION TABS -->
   <nav class="pageTabs">
     <div class="dropdown">
-      <button class="dropbtn" name="HOME">HOME</button>
+      <button class="dropbtn" name="HOME"><i class="fas fa-home"></i> HOME</button>
     </div>
     <div class="dropdown">
-      <button class="dropbtn">Cards</button>
+      <button class="dropbtn"><i class="fas fa-clipboard-list"></i> Cards</button>
       <div class="dropdown-content">
-        <a href="../Cards/Title-Card.html">Title Card</a>
-        <a href="../Cards/Test-Plan.html">Test Plan</a>
-        <a href="../Cards/Communication-Plan.html">Communication Plan</a>
-        <a href="../Cards/Sensor-RSO-Plan.html">Sensor & RSO Plan</a>
-        <a href="../Cards/Notes-Card.html">Notes Card</a>
-        <a href="../Cards/AnnexA-RMS.html">Annex A (RMS)</a>
-        <a href="../Cards/AnnexB-Operations.html">Annex B (Operations)</a>
+        <a href="Cards/Title-Card.html"><i class="fas fa-file-alt"></i> Title Card</a>
+        <a href="Cards/Test-Plan.html"><i class="fas fa-tasks"></i> Test Plan</a>
+        <a href="Cards/Communication-Plan.html"><i class="fas fa-comments"></i> Communication Plan</a>
+        <a href="Cards/Sensor-RSO-Plan.html"><i class="fas fa-radar"></i> Sensor & RSO Plan</a>
+        <a href="Cards/Notes-Card.html"><i class="fas fa-sticky-note"></i> Notes Card</a>
+        <a href="Cards/AnnexA-RMS.html"><i class="fas fa-folder-open"></i> Annex A (RMS)</a>
+        <a href="Cards/AnnexB-Operations.html"><i class="fas fa-folder-open"></i> Annex B (Operations)</a>
       </div>
     </div>
     <div class="dropdown">
-      <button class="dropbtn">Forms</button>
+      <button class="dropbtn"><i class="fas fa-file-signature"></i> Forms</button>
       <div class="dropdown-content">
-        <a href="../Forms/Profile-Form.html">Profile Form</a>
-        <a href="../Forms/Sensor-Form.html">Sensor Form</a>
-        <a href="../Forms/Operation-Room-Form.html">Operation Room Form</a>
-        <a href="../Forms/SUT-Form.html">SUT Form</a>
-        <a href="../Forms/Contracts-Form.html">Contracts Form</a>
-        <a href="../Forms/MD-Form.html">MD Form</a>
-        <a href="../Forms/Mission-Form.html">Mission Form</a>
+        <a href="Forms/Profile-Form.html"><i class="fas fa-user"></i> Profile Form</a>
+        <a href="Forms/Sensor-Form.html"><i class="fas fa-radar"></i> Sensor Form</a>
+        <a href="Forms/Operation-Room-Form.html"><i class="fas fa-desktop"></i> Operation Room Form</a>
+        <a href="Forms/SUT-Form.html"><i class="fas fa-rocket"></i> SUT Form</a>
+        <a href="Forms/Contracts-Form.html"><i class="fas fa-file-contract"></i> Contracts Form</a>
+        <a href="Forms/MD-Form.html"><i class="fas fa-file-medical-alt"></i> MD Form</a>
+        <a href="Forms/Mission-Form.html"><i class="fas fa-flag"></i> Mission Form</a>
       </div>
     </div>
     <div class="dropdown">
-      <button class="dropbtn">Documentation</button>
+      <button class="dropbtn"><i class="fas fa-book"></i> Documentation</button>
       <div class="dropdown-content">
-        <a href="../Pages/Documentation/ORSA.html">ORSA</a>
-        <a href="../Pages/Documentation/ORSM.html">ORSM</a>
-        <a href="../Pages/Documentation/ORSR.html">ORSR</a>
-        <a href="./Pages/Documentation/Training.html">Training</a>
+        <a href="Pages/Documentation/ORSA.html"><i class="fas fa-book-open"></i> ORSA</a>
+        <a href="Pages/Documentation/ORSM.html"><i class="fas fa-book-open"></i> ORSM</a>
+        <a href="Pages/Documentation/ORSR.html"><i class="fas fa-book-open"></i> ORSR</a>
+        <a href="Pages/Documentation/Training.html"><i class="fas fa-chalkboard-teacher"></i> Training</a>
       </div>
     </div>
   </nav>
 
-  <main id="root" class="main-container">
-    <div class="initialPage"> <!-- Note: Changed 'main' to 'div' -->
-      <aside class="addInfo">
-        <h2 class="showOnHover">Build Your Range</h2>
-        <ul id="select_edit_options">
-          <li><button>Range Sensors</button></li>
-          <li><button>Range Crew</button></li>
-          <li><button>Range Contacts</button></li>
-          <li><button>Units</button></li>
-          <li><button>PACE</button></li>
-          <li><button>SUT</button></li>
-        </ul>
-      </aside>
-        <button type="button" name="add-info-to-cards">CLICK TO ADD</button>
-      </aside>
-      <nav class="listOfReqs">
-        <h2>LIST OF ALL PLANNING REQUIREMENTS</h2>
-        <button id="add_msn_reqs" class="styledButton">ADD REQUIREMENTS</button>
-        <button id="rm_msn_reqs" class="styledButton">REMOVE REQUIREMENTS</button>
-        <ol id="requirement-list">
-          <li class="rangeRequirements">Sensors have to be scheduled <input type="checkbox"></li>
-        </ol>
-      </nav>
-    </main>
-</body>
-
-    <footer>
-      <ul>
-        <li><a href="./Pages/Cards/Title-Card.html">Title Card</a></li>
-        <li><a href="./Pages/Cards/Contracts.html">Contracts Card</a></li>
+  <main class="main-container">
+    <aside class="addInfo">
+      <h2 class="showOnHover">Build Your Range</h2>
+      <ul id="select_edit_options">
+        <!-- have range sensor display a popup that iterates through all sensor. When sensor is selected, find it in the relavent class
+        and push it to class_main.js to be stored. -->
+        <li><button><i class="fas fa-radar"></i> Range Sensors</button></li>
+        <!-- have displat a popup of all profiles, iterate through it and have it push the profiles to the class_mission.js to be stored. -->
+        <li><button><i class="fas fa-users"></i> Range Crew</button></li>
+        have it display a list of all contracts to be used and called like the above
+        <li><button><i class="fas fa-address-book"></i> Range Contacts</button></li>
+        have a form where the primary 
+        <li><button><i class="fas fa-project-diagram"></i> PACE</button></li>
+        <li><button><i class="fas fa-rocket"></i> SUT</button></li>
       </ul>
-      <a href="/README.md">Read Me</a>
-    </footer>
+    </aside>
+    <button type="button" id="add-info-to-cards" class="styledButton"><i class="fas fa-plus-circle"></i> CLICK TO ADD</button>
 
-    <!-- Modal for Adding Requirements -->
-    <div id="popup-modal" class="modal">
-      <div class="modal-content">
-        <span class="close-button">&times;</span>
-        <h2>Add New Requirement</h2>
-        <label for="new-requirement">Requirement:</label>
-        <!-- trying to make this input bar fill up more of the space -->
-        <div id="container"><input type="text" id="new-requirement" name="new-requirement"></div>
-        <button id="save-requirement" class="styledButton">Save</button>
-      </div>
-    </div>
-
-  <!-- Debug script to detect issues -->
-  <script>
-    window.addEventListener('load', function() {
-      console.log("Page fully loaded");
-    });
-
-    window.onerror = function(message, source, lineno, colno, error) {
-      console.error(`Error: ${message} at ${source}:${lineno}:${colno}`);
-    };
-
-    document.addEventListener('DOMContentLoaded', function() {
-      console.log("DOM fully loaded and parsed");
-
-      // Confirm all required items are loaded
-      const requiredElements = ['add_msn_reqs', 'rm_msn_reqs', 'select_edit_options', 'requirement-list', 'popup-modal'];
-      requiredElements.forEach(id => {
-        if (!document.getElementById(id)) {
-          console.error(`Element with id ${id} not found`);
-        } else {
-          console.log(`Element with id ${id} is loaded correctly`);
-        }
-      });
-
-      // Verify CSS is applied correctly
-      const testElement = document.createElement('div');
-      testElement.className = 'styledButton';
-      document.body.appendChild(testElement);
-      const computedStyle = getComputedStyle(testElement).backgroundColor;
-
-      if (computedStyle !== 'rgb(255, 87, 51)') { // rgb equivalent of #FF5733
-        console.error('CSS styles not applied correctly');
-      } else {
-        console.log('CSS styles applied correctly');
-      }
-      document.body.removeChild(testElement);
-    });
-  </script>
+    <section class="listOfReqs">
+      <h2>LIST OF ALL PLANNING REQUIREMENTS</h2>
+      <button id="add_msn_reqs" class="styledButton"><i class="fas fa-plus"></i> ADD REQUIREMENTS</button>
+      <button id="rm_msn_reqs" class="styledButton"><i class="fas fa-minus"></i> REMOVE REQUIREMENTS</button>
+      <ol id="requirement-list">
+        <li class="rangeRequirements">Sensors have to be scheduled <input type="checkbox"></li>
+      </ol>
+    </section>
   </main>
+
+  <footer>
+    <ul>
+      <li><a href="Pages/Cards/Title-Card.html"><i class="fas fa-file-alt"></i> Title Card</a></li>
+      <li><a href="Pages/Cards/Contracts.html"><i class="fas fa-file-contract"></i> Contracts Card</a></li>
+    </ul>
+    <a href="README.md"><i class="fas fa-book-reader"></i> Read Me</a>
+  </footer>
+
+  <!-- Modal for Adding Requirements -->
+  <div id="popup-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Add New Requirement</h2>
+      <label for="new-requirement">Requirement:</label>
+      <div id="container"><input type="text" id="new-requirement" name="new-requirement"></div>
+      <button id="save-requirement" class="styledButton"><i class="fas fa-save"></i> Save</button>
+    </div>
+  </div>
+</body>
 </html>
