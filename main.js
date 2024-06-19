@@ -9,6 +9,7 @@ const Satellite = require('./scripts/class_main')
 const ElectroOptical = require('./scripts/class_main')
 const Radar = require('./scripts/class_main')
 const propagateSatelliteState = require('./scripts/propagation')
+const propagateMissionSatellites = require('./scripts/propagation')
 const MissionDetail = require('./scripts/class_mission')
 const attachClickListenerToItems = ('./scripts/add-req-event.js')
 
@@ -22,3 +23,4 @@ document.addEventListener('DOMContentLoaded', () => {
     addSensor();
     console.log('Initialization complete.');
 });
+
