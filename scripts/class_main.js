@@ -177,4 +177,36 @@ class Satellite {
 
 }
 
-module.exports =  Profile, OperationRoom, Sensor, Satellite, ElectroOptical, Radar ;
+class SensorCost {
+    constructor(name, costFactor, costRate) {
+        this.name = name;
+        this.costFactor = costFactor;
+        this.costRate = costRate;
+    }
+
+    static hourlyCostArray = [];
+    static dailyCostArray = [];
+
+    static addSensorCost(sensorCost) {
+        if (sensorCost.costFactor === 'hourly') {
+            SensorCost.hourlyCostArray.push(sensorCost);
+        } else if (sensorCost.costFactor === 'daily') {
+            SensorCost.dailyCostArray.push(sensorCost);
+        }
+    }
+
+    static calculateTotalCost(totalHours, totalDays) {
+        let totalCost = 0;
+        SensorCost.hourlyCostArray.forEach((sensorCost) => {
+            totalCost += sensorCost.costRate * totalHours;
+        });
+        SensorCost.dailyCostArray.forEach((sensorCost) => {
+            totalCost += sensorCost.costRate * totalDays;
+        });
+        return totalCost;
+    }
+}
+
+
+
+module.exports =  Profile, OperationRoom, Sensor, Satellite, ElectroOptical, Radar, SensorCost;

@@ -1,6 +1,4 @@
-// handles sensors being add on the sensor form
-
-import { Sensor, ElectroOptical, Radar } from './class_main.js';
+import { Sensor, ElectroOptical, Radar, SensorCost } from './class_main.js';
 
 export function addSensor(sensor) {
     if (sensor.type === 'radar') {
@@ -83,6 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const lookAngleEast = document.getElementById('look-angle-east').value;
         const lookAngleWest = document.getElementById('look-angle-west').value;
         const dataType = document.getElementById('data-types').value;
+        const costFactor = document.getElementById('costFactor').value;
+        const costRate = document.getElementById('costRate').value;
+
         let newSensor;
         if (type === 'electro-optical') {
             const wavelength = document.getElementById('eo-wavelength').value;
@@ -95,6 +96,10 @@ document.addEventListener('DOMContentLoaded', () => {
             newSensor = new Radar(name, owner, latitude, longitude, lookAngleEast, lookAngleWest, 0, dataType, frequency, power);
             Radar.addRadar(newSensor);
         }
+
+        const sensorCost = new SensorCost(name, costFactor, costRate);
+        SensorCost.addSensorCost(sensorCost);
+
         addSensor(newSensor);
         updateSensorListUI();
         sensorForm.reset();

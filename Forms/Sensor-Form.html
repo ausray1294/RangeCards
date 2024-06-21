@@ -77,12 +77,18 @@
             <option value="electro-optical">Electro-Optical</option>
             <option value="radar">Radar</option>
           </select>
+          <label for="costFactor">Cost Factor</label>
+          <select id="costFactor" name="costFactor" required>
+            <option value="hourly">Hourly</option>
+            <option value="daily">Daily</option>
+          </select>
+          <input type="number" id="costRate" name="costRate" placeholder="Cost per Day/Hour" required>
           <input type="text" id="sensorOwner" name="sensorOwner" placeholder="Owner" required>
           <input type="text" id="latitude" name="latitude" placeholder="Latitude" required>
           <input type="text" id="longitude" name="longitude" placeholder="Longitude" required>
-          <input type="text" id="look-angle-east" name="look-angle-east" placeholder="Look Angle-East" required>
-          <input type="text" id="look-angle-west" name="look-angle-west" placeholder="Look Angle-West" required>
-          <input type="text" id="data-types" name="data-types" placeholder="Data Types" required>
+          <input type="text" id="look-angle-east" name="lookAngleEast" placeholder="Look Angle-East" required>
+          <input type="text" id="look-angle-west" name="lookAngleWest" placeholder="Look Angle-West" required>
+          <input type="text" id="data-types" name="dataTypes" placeholder="Data Types" required>
           <div id="electro-optical-fields" class="sensor-specific-fields">
             <input type="number" id="eo-wavelength" name="eoWavelength" placeholder="Wavelength (nm)" step="0.01">
             <input type="number" id="eo-sensitivity" name="eoSensitivity" placeholder="Sensitivity (Lux)" step="0.01">
